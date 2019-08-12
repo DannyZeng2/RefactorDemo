@@ -1,7 +1,9 @@
 package gildedRose;
 
-public class SulfurasHandRagnarosStrategy {
-    public void updateQualityAndSellIn(Item item){
+public class SulfurasHandRagnarosStrategy extends UpdateStrategy {
+
+    @Override
+    void updateQualityAndSellIn(Item item) {
 
     }
 }
