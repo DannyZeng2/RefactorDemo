@@ -39,6 +39,14 @@ public class GildedRoseTest {
     }
 
     @Test
+    public void should_update_other_when_sellIn_is_99_and_quality_is_99() {
+        Item item = new Item("Other",99,99);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Other, 98, 98",gildedRose.getItems()[0].toString());
+    }
+
+    @Test
     public void should_update_aged_brie_when_sellIn_is_5_and_quality_is_5() {
         Item item = new Item("Aged Brie",5,5);
         GildedRose gildedRose = new GildedRose(new Item[]{item});
@@ -92,6 +100,14 @@ public class GildedRoseTest {
         GildedRose gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
         Assert.assertEquals("Sulfuras, Hand of Ragnaros, -1, -1",gildedRose.getItems()[0].toString());
+    }
+
+    @Test
+    public void should_update_sulfuras_hand_of_ragnaros_when_sellIn_is_5_and_quality_is_minus_1() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros",5,-1);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Sulfuras, Hand of Ragnaros, 5, -1",gildedRose.getItems()[0].toString());
     }
 
     @Test
