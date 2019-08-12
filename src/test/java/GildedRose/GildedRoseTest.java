@@ -85,4 +85,12 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
         Assert.assertEquals("Sulfuras, Hand of Ragnaros, -1, 5",gildedRose.getItems()[0].toString());
     }
+
+    @Test
+    public void should_update_sulfuras_hand_of_ragnaros_when_sellIn_is_minus_1_and_quality_is_minus_1() {
+        Item item = new Item("Sulfuras, Hand of Ragnaros",-1,-1);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Sulfuras, Hand of Ragnaros, -1, -1",gildedRose.getItems()[0].toString());
+    }
 }
