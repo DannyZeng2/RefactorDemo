@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class CustomerTest2 {
+public class CustomerInRentalstoreTest {
     private Customer customer = new Customer("Jerry");
 
     @Test

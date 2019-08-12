@@ -14,7 +14,6 @@ public class ChildrenStrategy extends PriceStrategy {
 
     @Override
     public double getAmount(int dayRented) {
-        boolean day_more_than_3 = dayRented > 3;
-        return day_more_than_3?(dayRented - 3) * 1.5+1.5:1.5;
+        return dayRented > 3?(dayRented - 3) * 1.5+1.5:1.5;
     }
 }

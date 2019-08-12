@@ -12,7 +12,7 @@ public class RegularStrategy extends PriceStrategy {
     }
     @Override
     public double getAmount(int dayRented) {
-        boolean day_more_than_2 = dayRented > 2;
-        return day_more_than_2?(dayRented - 2) * 1.5+2:2;
+        //boolean day_more_than_2 = dayRented > 2;
+        return dayRented > 2?(dayRented - 2) * 1.5+2:2;
     }
 }

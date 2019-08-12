@@ -21,15 +21,6 @@ public class Rental {
     double getAmount() {
         return movie.getPriceStrategy().getAmount(dayRented);
     }
-    private double getPrice(double originPrice, int baseDay,double rate) {
-        double result = 0;
-        result += originPrice;
-        if (this.getDayRented() > baseDay) {
-            result += (this.getDayRented() - baseDay) * rate;
-        }
-        return result;
-    }
-
 
     int getFrequentRenterPoints() {
         //add frequent renter points
