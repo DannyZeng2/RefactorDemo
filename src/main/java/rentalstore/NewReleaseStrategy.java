@@ -1,13 +1,18 @@
 package rentalstore;
 
 public class NewReleaseStrategy extends PriceStrategy {
-    @Override
-    int getPriceCode() {
-        return Movie.NEW_RELEASE;
+    private int priceCode;
+    public NewReleaseStrategy(int priceCode) {
+        this.priceCode = priceCode;
     }
 
     @Override
-    double getMount() {
-        return 0;
+    public int getPriceCode() {
+        return priceCode;
+    }
+
+    @Override
+    public double getAmount(int dayRented) {
+        return dayRented* 3;
     }
 }

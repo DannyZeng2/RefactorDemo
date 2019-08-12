@@ -3,6 +3,6 @@ package rentalstore;
 abstract class PriceStrategy {
 
     abstract int getPriceCode();
-    abstract double getMount();
+    abstract double getAmount(int dayRented);
 
 }

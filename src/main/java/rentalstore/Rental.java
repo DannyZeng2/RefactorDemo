@@ -19,20 +19,7 @@ public class Rental {
     }
 
     double getAmount() {
-        double thisAmount = 0;
-
-        switch (getMovie().getPriceCode()) {
-            case form_template_method.Movie.REGULAR:
-                thisAmount = getPrice(2, 2,1.5);
-                break;
-            case form_template_method.Movie.NEW_RELEASE:
-                thisAmount += getPrice(0, 0,3);
-                break;
-            case form_template_method.Movie.CHILDRENS:
-                thisAmount = getPrice(1.5, 3,1.5);
-                break;
-        }
-        return thisAmount;
+        return movie.getPriceStrategy().getAmount(dayRented);
     }
     private double getPrice(double originPrice, int baseDay,double rate) {
         double result = 0;
