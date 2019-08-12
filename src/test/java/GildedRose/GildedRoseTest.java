@@ -112,9 +112,9 @@ public class GildedRoseTest {
 
     @Test
     public void should_update_backstage_hand_of_ragnaros_when_sellIn_is_5_and_quality_is_12() {
-        Item item = new Item("Backstage passes to a TAFKAL80ETC concert",5,12);
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert",12,5);
         GildedRose gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
-        Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert, 4, 10",gildedRose.getItems()[0].toString());
+        Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert, 11, 6",gildedRose.getItems()[0].toString());
     }
 }
