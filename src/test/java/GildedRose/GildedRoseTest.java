@@ -30,7 +30,13 @@ public class GildedRoseTest {
         Assert.assertEquals("Other, -2, -1",gildedRose.getItems()[0].toString());
     }
 
-
+    @Test
+    public void should_update_other_when_sellIn_is_5_and_quality_is_minus_1() {
+        Item item = new Item("Other",5,-1);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Other, 4, -1",gildedRose.getItems()[0].toString());
+    }
 
 
 }
