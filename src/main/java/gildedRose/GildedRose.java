@@ -6,6 +6,10 @@ public class GildedRose {
         this.items = items;
     }
 
+    public Item[] getItems() {
+        return items;
+    }
+
     public void updateQuality() {
         for (Item item:items) {
             if (!item.name.equals("Aged Brie")
@@ -15,9 +19,7 @@ public class GildedRose {
                         item.quality = item.quality - 1;
                     }
                 }
-            }
-
-            else {
+            } else {
                 if (item.quality < 50) {
                     item.quality = item.quality + 1;
 
@@ -37,7 +39,9 @@ public class GildedRose {
                 }
             }
 
-            updateSulfurasHandRagnaros(item);
+            if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+                item.sellIn = item.sellIn - 1;
+            }
 
             if (item.sellIn < 0) {
                 if (!item.name.equals("Aged Brie")) {
@@ -56,12 +60,6 @@ public class GildedRose {
                     }
                 }
             }
-        }
-    }
-
-    private void updateSulfurasHandRagnaros(Item item) {
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn = item.sellIn - 1;
         }
     }
 }
