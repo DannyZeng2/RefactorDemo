@@ -133,4 +133,21 @@ public class GildedRoseTest {
         gildedRose.updateQuality();
         Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert, 6, 51",gildedRose.getItems()[0].toString());
     }
+
+    @Test
+    public void should_update_backstage_hand_of_ragnaros_when_sellIn_is_13_and_quality_is_51() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert",13,51);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert, 12, 51",gildedRose.getItems()[0].toString());
+    }
+
+    @Test
+    public void should_update_backstage_hand_of_ragnaros_when_sellIn_is_minus_1_and_quality_is_5() {
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert",-1,5);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Backstage passes to a TAFKAL80ETC concert, -2, 0",gildedRose.getItems()[0].toString());
+    }
+
 }
