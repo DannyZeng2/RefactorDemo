@@ -15,11 +15,22 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void should_update_sellIn_when_name_is_sulfuras_hand_of_ragnaros_() {
+    public void should_update_other_when_sellIn_is_minus_1_and_quality_is_5() {
         Item item = new Item("Other",-1,5);
         GildedRose gildedRose = new GildedRose(new Item[]{item});
         gildedRose.updateQuality();
         Assert.assertEquals("Other, -2, 3",gildedRose.getItems()[0].toString());
     }
+
+    @Test
+    public void should_update_other_when_sellIn_is_minus_1_and_quality_is_minus_1() {
+        Item item = new Item("Other",-1,-1);
+        GildedRose gildedRose = new GildedRose(new Item[]{item});
+        gildedRose.updateQuality();
+        Assert.assertEquals("Other, -2, -1",gildedRose.getItems()[0].toString());
+    }
+
+
+
 
 }
